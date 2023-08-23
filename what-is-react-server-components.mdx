@@ -11,3 +11,15 @@ In late 2020, the React team introduced the "Zero-Bundle-Size React Server Compo
 React has changed how we think about building user interfaces. And the new model using React Server Components is way more structured, convenient, and maintainable, and offers a better user experience.
 
 The latest release of `Next.js` has gone the "Thinking in Server Components" way. And as React devs, we must adapt to this new mental model to fully leverage its power in building applications
+
+### Basic example of RSC in Next.js 13
+
+```
+const page = async ({ params }: { params: { slug: string } }) => {
+  const content = await getSinglePost(params.slug);
+
+  return <article>{content}</article>;
+};
+
+export default page;
+```
